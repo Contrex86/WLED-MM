@@ -901,6 +901,22 @@ BusHub75Matrix::BusHub75Matrix(BusConfig &bc) : Bus(bc.type, bc.start, bc.autoWh
   mxconfig.gpio.d = 21;
   mxconfig.gpio.e = 12;
 
+#elif defined(SEENGREAT_ESP32S3_PINOUT)
+  USERPRINT("MatrixPanelI2SDMA - SeenGreat Adapter Board E");
+  mxconfig.gpio.r1 = 37;
+  mxconfig.gpio.g1 = 6;
+  mxconfig.gpio.b1 = 36;
+  mxconfig.gpio.r2 = 35;
+  mxconfig.gpio.g2 = 5;
+  mxconfig.gpio.b2 = 0;
+  mxconfig.gpio.a  = 45;
+  mxconfig.gpio.b  = 1;
+  mxconfig.gpio.c  = 48;
+  mxconfig.gpio.d  = 2;
+  mxconfig.gpio.e  = 4;
+  mxconfig.gpio.clk = 47;
+  mxconfig.gpio.lat = 38;
+  mxconfig.gpio.oe  = 21;
 #else
   USER_PRINTLN("MatrixPanel_I2S_DMA - Default pins");
   /*
